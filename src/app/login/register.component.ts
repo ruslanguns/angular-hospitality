@@ -87,8 +87,8 @@ export class RegisterComponent implements OnInit {
 
 
 
-    console.log( '¿Forma es válida?', this.forma.valid );
-    console.log(this.forma.value);
+    // console.log( '¿Forma es válida?', this.forma.valid );
+    // console.log(this.forma.value);
 
   }
 

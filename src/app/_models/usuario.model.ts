@@ -1,7 +1,6 @@
 
 /*
 Todos los usuarios tienen una serie de propiedades y métodos.
-
 Con esta clase nos permitirá utilizar todos estos datos de una
 sola vez...
 Este es un modelo de datos que nos permitirá trabajar de una

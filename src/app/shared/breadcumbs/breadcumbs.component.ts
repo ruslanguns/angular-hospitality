@@ -18,7 +18,7 @@ export class BreadcumbsComponent implements OnInit {
 
     this.getDataRoute()
     .subscribe( data => {
-      console.log(data);
+      // console.log(data);
       this.titulo = data.titulo; // de esta manera gestionamos el titulo de la página para el breadcumb
       this.title.setTitle( this.titulo ); // de esta manaera estamos gestionando el title del encabezado
 

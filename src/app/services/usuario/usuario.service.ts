@@ -113,8 +113,12 @@ export class UsuarioService {
       return this.http.put( url, usuario )
                   .map( (resp: any) => {
                     // this.usuario = resp.usuario;
-                    let usuarioDB: Usuario = resp.usuario;
-                    this.guardarStorage( usuarioDB._id, this.token, usuarioDB );
+
+                    if ( usuario._id === this.usuario._id ) {
+                      let usuarioDB: Usuario = resp.usuario;
+                      this.guardarStorage( usuarioDB._id, this.token, usuarioDB );
+                    }
+
                     swal('Usuario actualizado', `Nombre cambiado a: ${usuario.nombre}`, 'success' );
                     return true;
 

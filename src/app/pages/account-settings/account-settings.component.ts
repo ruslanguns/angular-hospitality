@@ -1,7 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
-import { SettingsService } from 'src/app/services/settings/settings.service';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+// import { DOCUMENT } from '@angular/common';
+import { SettingsService } from '../../services/settings/settings.service';
 
 @Component({
   selector: 'app-account-settings',
@@ -15,6 +14,7 @@ export class AccountSettingsComponent implements OnInit {
 
   ngOnInit() {
 
+    this.apiCargarSettings();
     this.colocarCheck();
   }
 
@@ -54,6 +54,15 @@ export class AccountSettingsComponent implements OnInit {
       }
     }
 
+  }
+
+  apiCargarSettings() {
+
+    this._ajustes.apiCargarSettings()
+      .subscribe( resp => {
+        console.log(resp);
+
+      });
   }
 }
 

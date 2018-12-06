@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../_models/usuario.model';
 import { UsuarioService } from 'src/app/services/service.index';
+import { ModalUploadService } from '../../components/modal-upload/modal-upload.service';
 
 declare var swal: any;
 
@@ -16,10 +17,21 @@ export class UsuariosComponent implements OnInit {
   totalRegistros: number = 0;
   cargando: boolean = true;
 
-  constructor(public _usuarioService: UsuarioService) {}
+  constructor(
+    public _usuarioService: UsuarioService,
+    public _modalUploadService: ModalUploadService
+  ) {}
 
   ngOnInit() {
     this.cargarUsuarios();
+
+    this._modalUploadService.notificacion
+          .subscribe( resp => this.cargarUsuarios());
+  }
+
+  mostrarModal( id: string ) {
+
+    this._modalUploadService.mostrarModal( 'usuarios', id ); // llamar al modal
   }
 
   cargarUsuarios() {
@@ -72,11 +84,10 @@ export class UsuariosComponent implements OnInit {
       });
   }
 
-  borrarUsuario( usuario: Usuario ) {
-
+  borrarUsuario(usuario: Usuario) {
     console.log('Borrar usuario');
-    if ( usuario._id === this._usuarioService.usuario._id) {
-      swal('Error al borrar usuario', 'No puede borrarse a si mismo', 'error' );
+    if (usuario._id === this._usuarioService.usuario._id) {
+      swal('Error al borrar usuario', 'No puede borrarse a si mismo', 'error');
       return;
     }
 
@@ -86,25 +97,18 @@ export class UsuariosComponent implements OnInit {
       icon: 'warning',
       buttons: true,
       dangerMode: true
-    })
-    .then( borrar => {
+    }).then(borrar => {
       // console.log( borrar );
-      if ( borrar ) {
-        this._usuarioService.borrarUsuario( usuario._id )
-            .subscribe( borrado => {
-                // console.log( borrado );
-                this.cambiarDesde(0);
-            });
+      if (borrar) {
+        this._usuarioService.borrarUsuario(usuario._id).subscribe(borrado => {
+          // console.log( borrado );
+          this.cambiarDesde(0);
+        });
       }
     });
-
-
   }
 
   guardarUsuario(usuario: Usuario) {
-    this._usuarioService.actualizarUsuario(usuario)
-      .subscribe();
+    this._usuarioService.actualizarUsuario(usuario).subscribe();
   }
-
-
 }

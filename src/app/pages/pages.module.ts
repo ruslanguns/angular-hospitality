@@ -17,6 +17,7 @@ import { ProgressComponent } from './progress/progress.component';
 import { Graficas1Component } from './graficas1/graficas1.component';
 import { PagesComponent } from './pages.component';
 
+
 // routing
 import { PAGES_ROUTING } from './pages.routes';
 
@@ -28,6 +29,7 @@ import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+import { ModalUploadComponent } from '../components/modal-upload/modal-upload.component';
 
 
 @NgModule({
@@ -42,7 +44,8 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
     PromesasComponent,
     RxjsComponent,
     ProfileComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    ModalUploadComponent
   ],
   imports: [
     CommonModule,
@@ -59,4 +62,4 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
     PagesComponent
   ]
 })
-export class PagesModule { }
+export class PagesModule {}

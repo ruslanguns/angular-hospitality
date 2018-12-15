@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { PagesModule } from './pages/pages.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginModule } from './login/login.module';
 
 // routing
 import { APP_ROUTING } from './app.routes';
@@ -11,21 +12,18 @@ import { APP_ROUTING } from './app.routes';
 import { ServiceModule } from './services/service.module';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './login/register.component';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    LoginComponent,
-    RegisterComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     APP_ROUTING,
     PagesModule,
+    LoginModule,
     FormsModule,
     ReactiveFormsModule,
     ServiceModule

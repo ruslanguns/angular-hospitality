@@ -1,0 +1,52 @@
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<section id="wrapper" class="login-register login-sidebar" style="background-image:url(assets/images/background/login-register.jpg);">
+    <div class="login-box card">
+        <div class="card-body">
+            <form ngNativeValidate [formGroup]="forma" (ngSubmit)="resetPassword()" class="form-horizontal form-material" id="loginform" action="index.html">
+                <a href="javascript:void(0)" class="text-center db"><img src="assets/images/logo-icon.png" alt="Home" /><br/><img src="assets/images/logo-text.png" alt="Home" /></a>
+                <h3 class="box-title m-t-40 m-b-0">Resetear contraseña</h3>
+                <small>Complete los campos para recuperar la contraseña</small>
+                <div class="form-group m-t-20">
+                    <div class="col-xs-12">
+                        <input formControlName="pin" name="pin" [value]="token" class="form-control" type="text" equired placeholder="Ingrese el PIN">
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <div class="col-xs-12">
+                        <input formControlName="password" name="password" class="form-control" type="password" required placeholder="Contraseña">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <input formControlName="password2" name="password2" class="form-control" type="password" required placeholder="Confirmar contraseña">
+                    </div>
+                </div>
+
+                <!-- ALERTA -->
+                <div class="form-group" *ngIf="forma.errors?.sonIguales && !forma.pristine">
+                    <p class="text-danger">Las contraseñas deben ser iguales</p>
+                </div>
+
+                <!-- ALERTA -->
+                <div *ngIf="!forma.valid" class="form-group">
+                    <p class="text-info" style="font-size: 0.7em !important;">Las contraseñas deben mas de 5 caracteres</p>
+                </div>
+
+                <div class="form-group text-center m-t-20 ">
+                    <div class="col-xs-12 ">
+                        <button [disabled]="!forma.valid " class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light " type="submit ">Cambiar contraseña</button>
+                    </div>
+                </div>
+                <div class="form-group m-b-0 ">
+                    <div class="col-sm-12 text-center ">
+                        <p>¿Ya tienes una cuenta? <a routerLink="/login " class="text-info m-l-5 "><b>Iniciar sesión</b></a></p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<!-- ============================================================== -->
+<!-- End Wrapper -->

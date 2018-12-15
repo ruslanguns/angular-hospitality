@@ -164,6 +164,7 @@ export class UsuarioService {
       return this.http.delete( url )
                   .map ( (resp: any) => {
                       swal('Operación realizada!', 'El usuario ha sido borrado con éxito', 'success');
+                      return true;
                   });
     }
 }

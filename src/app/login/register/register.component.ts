@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, Form } from '@angular/forms';
 import swal from 'sweetalert';
-import { UsuarioService } from '../services/service.index';
-import { Usuario } from '../_models/usuario.model';
+import { UsuarioService } from '../../services/service.index';
+import { Usuario } from '../../_models/usuario.model';
 import { Router } from '@angular/router';
 
 declare function init_plugins();
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['../login.component.css']
 })
 export class RegisterComponent implements OnInit {
 
@@ -75,7 +75,7 @@ export class RegisterComponent implements OnInit {
       this.forma.value.nombre,
       this.forma.value.email,
       this.forma.value.password
-      )
+      );
 
       this._usuarioService.crearUsuario( usuario )
               .subscribe( resp => {

@@ -16,6 +16,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
 import { Graficas1Component } from './graficas1/graficas1.component';
 import { PagesComponent } from './pages.component';
+import { TinymceModule } from 'angular2-tinymce';
+import { EditorComponent } from '../components/editor/editor.component';
 
 
 // routing
@@ -30,6 +32,9 @@ import { RxjsComponent } from './rxjs/rxjs.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { ModalUploadComponent } from '../components/modal-upload/modal-upload.component';
+import { MedicoComponent } from './medicos/medico.component';
+import { MedicosComponent } from './medicos/medicos.component';
+import { HospitalesComponent } from './hospitales/hospitales.component';
 
 
 @NgModule({
@@ -45,7 +50,11 @@ import { ModalUploadComponent } from '../components/modal-upload/modal-upload.co
     RxjsComponent,
     ProfileComponent,
     UsuariosComponent,
-    ModalUploadComponent
+    MedicoComponent,
+    MedicosComponent,
+    HospitalesComponent,
+    ModalUploadComponent,
+    EditorComponent
   ],
   imports: [
     CommonModule,
@@ -53,7 +62,8 @@ import { ModalUploadComponent } from '../components/modal-upload/modal-upload.co
     SharedModule,
     FormsModule,
     ChartsModule,
-    PipesModule
+    PipesModule,
+    TinymceModule.withConfig({})
   ],
   exports: [
     DashboardComponent,

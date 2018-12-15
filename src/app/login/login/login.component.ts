@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
-import { UsuarioService } from '../services/service.index';
-import { Usuario } from '../_models/usuario.model';
+import { UsuarioService } from '../../services/service.index';
+import { Usuario } from '../../_models/usuario.model';
 
 declare function init_plugins();
 declare const gapi: any; // necesario para google login
@@ -10,7 +10,7 @@ declare const gapi: any; // necesario para google login
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['../login.component.css']
 })
 export class LoginComponent implements OnInit {
 

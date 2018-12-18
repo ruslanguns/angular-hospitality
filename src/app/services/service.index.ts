@@ -1,6 +1,6 @@
+export { AdminGuard } from './guards/admin.guard';
 export { MailService } from './mail/mail.service';
 export { PasswordService } from './password/password.service';
-
 export { HospitalService } from './hospital/hospital.service';
 export { MedicoService } from './medico/medico.service';
 

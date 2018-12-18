@@ -94,6 +94,7 @@ export class LoginComponent implements OnInit {
               .subscribe( correcto => {
 
                 const rutaADondeVoy = localStorage.getItem('ruta');
+                console.log(correcto);
 
                 if (rutaADondeVoy !== undefined) { // console.log('Ruta dirigida');
 

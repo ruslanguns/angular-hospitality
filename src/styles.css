@@ -39,3 +39,9 @@
     height: 100%;
     z-index: 9999;
 }
+
+.imgRedonda {
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
+}

@@ -42,6 +42,8 @@ export class MedicosComponent implements OnInit {
 
       this.totalRegistros = resp.total;
       this.medicos = resp.medico;
+      console.log(this.medicos);
+
 
       this.cargando = false;
     });

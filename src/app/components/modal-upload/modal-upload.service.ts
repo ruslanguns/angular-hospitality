@@ -13,7 +13,7 @@ export class ModalUploadService {
   public notificacion = new EventEmitter<any>(); // emite un valor any, aunque tambien puede ser booleanlo.
 
   constructor() {
-    console.log('Funciona el servicio de modal');
+    // console.log('Funciona el servicio de modal');
 
    }
 

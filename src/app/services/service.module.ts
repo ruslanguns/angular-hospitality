@@ -12,7 +12,8 @@ import {
   PasswordService,
   MailService,
   HospitalService,
-  MedicoService
+  MedicoService,
+  AdminGuard
 } from './service.index';
 
 
@@ -32,7 +33,8 @@ import {
     PasswordService,
     MailService,
     HospitalService,
-    MedicoService
+    MedicoService,
+    AdminGuard
   ],
   declarations: []
 })

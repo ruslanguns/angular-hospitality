@@ -1,13 +1,13 @@
-import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormControl, Validators } from "@angular/forms";
-import { MailService } from "src/app/services/service.index";
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { MailService } from 'src/app/services/service.index';
 
 declare function init_plugins();
 
 @Component({
-  selector: "app-forget",
-  templateUrl: "./forget.component.html",
-  styleUrls: ["../login.component.css"]
+  selector: 'app-forget',
+  templateUrl: './forget.component.html',
+  styleUrls: ['../login.component.css']
 })
 export class ForgetComponent implements OnInit {
   forma: FormGroup;
@@ -18,12 +18,12 @@ export class ForgetComponent implements OnInit {
     init_plugins();
 
     this.forma = new FormGroup({
-      correo: new FormControl("", [Validators.email, Validators.email])
+      correo: new FormControl('', [Validators.email, Validators.email])
     });
   }
 
   enviarCorreo() {
-    console.log("correo", this.forma.value.correo);
+    console.log('correo', this.forma.value.correo);
 
     let to: string = this.forma.value.correo;
 

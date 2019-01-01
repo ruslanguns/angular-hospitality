@@ -12,21 +12,25 @@ import { APP_ROUTING } from './app.routes';
 import { ServiceModule } from './services/service.module';
 
 import { AppComponent } from './app.component';
+import { PagesComponent } from './pages/pages.component';
+import { SharedModule } from './shared/shared.module';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PagesComponent
   ],
   imports: [
     BrowserModule,
     APP_ROUTING,
-    PagesModule,
+    // PagesModule,
     LoginModule,
     FormsModule,
     ReactiveFormsModule,
-    ServiceModule
+    ServiceModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

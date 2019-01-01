@@ -18,13 +18,19 @@ import { MedicosComponent } from './medicos/medicos.component';
 import { MedicoComponent } from './medicos/medico.component';
 import { EditorComponent } from '../components/editor/editor.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
+import { VerificaTokenGuard } from '../services/service.index';
 
 const PAGES_ROUTES: Routes = [
-    { path: '',
-    component: PagesComponent,
-    canActivate: [ LoginGuardGuard ],
-    children: [
-        { path: 'dashboard', component: DashboardComponent, data: { titulo: 'Dashboard' } },
+    // { path: '',
+    // component: PagesComponent,
+    // canActivate: [ LoginGuardGuard ],
+    // children: [
+        {
+          path: 'dashboard',
+          component: DashboardComponent,
+          canActivate: [ VerificaTokenGuard ],
+          data: { titulo: 'Dashboard' }
+        },
         { path: 'progress', component: ProgressComponent, data: { titulo: 'Progress' } },
         { path: 'graficas1', component: Graficas1Component, data: { titulo: 'Gráficas' } },
         { path: 'promesas', component: PromesasComponent, data: { titulo: 'Promesas' } },
@@ -47,8 +53,8 @@ const PAGES_ROUTES: Routes = [
         { path: 'medico/:id', component: MedicoComponent, data: { titulo: 'Médico' } },
         { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
 
-    ]
-},
+    // ]
+// },
 ];
 
 export const PAGES_ROUTING = RouterModule.forChild(PAGES_ROUTES);

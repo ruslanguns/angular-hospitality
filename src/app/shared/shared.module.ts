@@ -10,6 +10,7 @@ import { NopagefoundComponent } from './nopagefound/nopagefound.component';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { BreadcumbsComponent } from './breadcumbs/breadcumbs.component';
+import { ModalUploadComponent } from '../components/modal-upload/modal-upload.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { BreadcumbsComponent } from './breadcumbs/breadcumbs.component';
         NopagefoundComponent,
         HeaderComponent,
         SidebarComponent,
-        BreadcumbsComponent
+        BreadcumbsComponent,
+        ModalUploadComponent
     ],
     imports: [
         RouterModule,
@@ -28,7 +30,8 @@ import { BreadcumbsComponent } from './breadcumbs/breadcumbs.component';
         NopagefoundComponent,
         HeaderComponent,
         SidebarComponent,
-        BreadcumbsComponent
+        BreadcumbsComponent,
+        ModalUploadComponent
     ],
     providers: [],
 })

@@ -13,7 +13,8 @@ import {
   MailService,
   HospitalService,
   MedicoService,
-  AdminGuard
+  AdminGuard,
+  VerificaTokenGuard
 } from './service.index';
 
 
@@ -34,7 +35,8 @@ import {
     MailService,
     HospitalService,
     MedicoService,
-    AdminGuard
+    AdminGuard,
+    VerificaTokenGuard
   ],
   declarations: []
 })

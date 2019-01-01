@@ -15,6 +15,15 @@ export class GraficaDonaComponent implements OnInit {
       @Input('ChartData') doughnutChartData: number[] = [];
       @Input('ChartType') doughnutChartType: string = '';
 
+        // events
+  public chartClicked(e: any): void {
+    console.log(e);
+  }
+
+  public chartHovered(e: any): void {
+    console.log(e);
+  }
+
   constructor() { }
 
 

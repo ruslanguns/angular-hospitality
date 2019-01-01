@@ -53,7 +53,6 @@ sendMailForgetPassword( to: string ) {
           return resp;
         // }, error => {
         //   console.log('HAY UN ERROR Y GRANDE');
-
         //   swal(`Error: ${error.status}`, error.message, 'warning');;
         }
       ));

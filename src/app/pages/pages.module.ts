@@ -35,6 +35,7 @@ import { MedicosComponent } from './medicos/medicos.component';
 import { HospitalesComponent } from './hospitales/hospitales.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 import { EditorPagesComponent } from './editor/editor.component';
+import { OpenweatherComponent } from './librerias/openweather/openweather.component';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { EditorPagesComponent } from './editor/editor.component';
     // ModalUploadCo
     BusquedaComponent,
     EditorPagesComponent,
-    EditorComponent
+    EditorComponent,
+    OpenweatherComponent
   ],
   imports: [
     CommonModule,

@@ -19,6 +19,7 @@ import { MedicoComponent } from './medicos/medico.component';
 import { EditorComponent } from '../components/editor/editor.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 import { VerificaTokenGuard } from '../services/service.index';
+import { OpenweatherComponent } from './librerias/openweather/openweather.component';
 
 const PAGES_ROUTES: Routes = [
     // { path: '',
@@ -46,6 +47,15 @@ const PAGES_ROUTES: Routes = [
           component: UsuariosComponent,
           canActivate: [ AdminGuard ],
           data: { titulo: 'Mantenimiento de usuarios' }
+        },
+
+        // Librerias
+
+        {
+          path: 'librerias/openweather',
+          component: OpenweatherComponent,
+          canActivate: [ AdminGuard ],
+          data: { titulo: 'Librerias para Angular' }
         },
 
         { path: 'hospitales', component: HospitalesComponent, data: { titulo: 'Mantenimiento de hospitales' } },
